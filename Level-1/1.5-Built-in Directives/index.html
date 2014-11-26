@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang-"en" ng-app="store">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Shaping Up With Angular JS: 1.5 Built in Directives</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	</head>
+	<body ng-controller="StoreController as store">
+		
+		<div ng-repeat="product in store.products">	
+			<div ng-hide="product.soldOut">
+				<h1> {{product.name}} </h1>
+				<h2> {{product.price}} </h2>
+				<p> {{product.description}} </p>
+			
+    			<button ng-show="product.soldOut">Sold out</button>
+				<button ng-show="product.canPurchase"> Add to Cart </button> <!--  will only show the element if the value of the expression is true  -->
+			 <!-- <button ng-show="product.soldOut">  --> <!-- Hide this product when sold out -->
+			</div>
+		</div>
+	
+		
+
+
+
+
+
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+	</body>
+</html>
